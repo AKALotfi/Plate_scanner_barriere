@@ -1,6 +1,5 @@
 import cv2
 import easyocr
-import time
 
 
 harcascade = "model/haarcascade_russian_plate_number.xml"

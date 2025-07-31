@@ -19,6 +19,10 @@ def open_barrier():
     print("🔒 Barrier closed")
 
 # --- Load Authorized Plates from File ---
+
+def clean_text(text):
+    return re.sub(r'[^A-Za-z0-9]', '', text.upper())
+
 try:
     with open("authorized.txt", "r") as f:
         authorized_plates = [clean_text(line) for line in f if line.strip()]
@@ -43,8 +47,6 @@ if plate_cascade.empty():
 # Initialize EasyOCR (CPU-only, English)
 reader = easyocr.Reader(['en'], gpu=False, model_storage_directory='.', download_enabled=False)
 
-def clean_text(text):
-    return re.sub(r'[^A-Za-z0-9]', '', text.upper())
 
 last_capture = 0
 CAPTURE_COOLDOWN = 5  # seconds

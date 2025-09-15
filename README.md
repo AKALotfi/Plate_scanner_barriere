@@ -26,3 +26,5 @@ Optionally displays the live video feed with bounding boxes around detected plat
 Parking gate access,
 
 Automatic vehicle entry control.
+
+## Hello, this is the second contributor (and first creator of the project)
